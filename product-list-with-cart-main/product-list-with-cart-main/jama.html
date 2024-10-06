@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+h1{ 
+    margin-left: 120px; 
+    margin-top: 0px;
+} 
+ul {
+    display: flex;
+    flex-wrap: column;
+    gap: 5px; 
+}
+#pic{ 
+    width: 130px; 
+    border-radius: 10px;
+}
+li {
+    list-style: none;
+    margin: 0;  
+    width: 90%; 
+    position: relative;
+}
+.card{ 
+ padding: 0px 10px;
+} 
+
+
+.special { 
+    position: absolute; 
+    top: -45px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    max-width: 90%;
+    margin: 80px 80px;
+}
+
+.special button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px; 
+    background: white; 
+    padding: 5px;  
+    font-size: 0.5rem;
+    border-radius: 30px; 
+    width: 90px;  
+    height: 30px;
+    margin-left: 20px;
+    cursor: pointer; 
+    position: absolute; 
+    border: none;
+}
+
+.special button img {
+    width: 10%;
+}
+p{
+    font-size: 0.5rem;
+}
+#name {
+    color: #888;
+    margin-top: 10px;
+}
+
+#title {
+    color: black;
+    margin-top: 5px; 
+    font-size: 0.5rem; 
+    font-weight: bold;
+}
+
+
+#price {
+    font-weight: bold;
+    margin-top: 10px;
+    color: red; 
+    font-size: 0.8rem;
+}
+
+.cart { 
+    position: absolute;  
+    top: 10px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-left: 20px;
+    width: 300px; 
+    right: 10px;
+    width: 150px; 
+    height: 40vh; 
+}   
+
+#btns{  
+    position: relative; 
+    bottom: -30px; 
+    background-color:#ff0000;
+ width: 100%; 
+ height: 30px; 
+ font-size: 0.9rem;    
+ color: #fff; 
+ font-weight: bold; 
+ right: 20px;  
+ display: none;
+}
+
+#cartpic{ 
+width: 100px;
+}
+
+.cart h3 {
+    margin-top: 0;
+}
+
+.cart img {
+    width: 150px;
+    margin: 20px 0;
+}
+
+#carttext {
+    color: #888;
+}
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+.different{
+display: none; 
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.5);
+}
+.order-content {
+background-color: #fff;
+margin: 10% auto;
+padding: 20px;
+border-radius: 10px;
+max-width: 400px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+text-align: center;
+}
+.orderheader {
+display: flex;
+flex-direction: column;
+text-align: left;
+gap: 7px;
+margin-bottom: 20px;
+margin-top: 15px;
+}
+
+.orderheader img {
+color: #4caf50;
+width: 30px;
+}
+
+.orderheader h2 {
+font-size: 1.8rem;
+color: #333;
+}
+
+.orderheader p {
+color: gray;
+font-size: 11px;
+font-weight: 300;
+}
+
+.unique{ 
+    background: black;
+}
+
+#doings {
+display: flex; 
+align-content: center; 
+justify-content: center;
+width: 100%;
+padding: 10px;
+background-color: #ff0000;
+color: white;
+border: none;
+border-radius: 50px;
+font-size: 1rem;
+cursor: pointer; 
+position: relative; 
+right: 10px;
+}
+
+.start-new-order:hover {
+background-color: #b94a00;
+}
+
+#do{ 
+    display: none;
+    color: #fff; 
+    background: #ff0000; 
+    padding: 10px; 
+    border-radius: 10px; 
+    position: fixed; 
+    bottom: 330px; 
+    right: 121px; 
+    cursor: pointer;
+} 
+.order-total {
+      display: none;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd; 
+      position: fixed; 
+      bottom: 390px; 
+      right: 121px; 
+  } 
+
+@media screen and (max-width: 860px){
+    .cart{ position: absolute;
+        right: -18px;
+        width: 100px; 
+        height: 30vh;
+    } 
+    #cartpic{ 
+        width: 100px;
+    }
+} @media screen and (max-width: 802px) {  
+    h1{ 
+        padding: 20px 0; 
+        position: relative;
+    } 
+    
+    ul {
+        display: flex; 
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .card {
+        width: 100%;
+        height: auto; 
+        padding: 0;
+        gap: 10px; 
+        position: relative; 
+        left: 0;
+    } 
+
+    #pic {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    li {
+        display: flex; 
+        flex-direction: column; 
+        width: 100%;   
+        gap: 10px;
+        padding: 10px; 
+        justify-content: center; 
+        align-items: center;
+    }
+
+    .special { 
+        display: grid;
+        grid-template-columns: 1fr; 
+        gap: 10px; 
+        max-width: 100%;
+        margin-top: 100px;
+    }
+
+    .special button {
+        margin-top: -20px; 
+        width: 150px;
+        height: 35px;
+        font-size: 1rem;  
+        border: 1px solid black;
+        display: flex;
+        justify-content: center; 
+        align-items: center;     
+        left: 50%;
+        transform: translateX(-50%); 
+        }
+
+    .cart {
+        position: relative; 
+        bottom: 500px; 
+        width: 80%; 
+        
+        padding: 10px;
+    } 
+
+    #cartpic {
+        width: 50px;
+        margin: 10px 0;
+    }
+
+    #carttext {
+        font-size: 0.8rem;
+    } 
+    
+    p{
+        font-size: 0.7rem;
+    }
+    
+    #name {
+        color: #888;
+        margin-top: 10px;
+    }
+    
+    #title {
+        n-top: 5px; 
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+    
+    #price {
+        font-weight: bold;
+        margin-top: 10px;
+        color: red; 
+        font-size: 0.9rem;
+    } 
+#btns{   
+    margin-left: 0px;
+} 
+#do{ 
+    display: none;
+    color: #fff; 
+    background: #ff0000; 
+    padding: 10px; 
+    border-radius: 10px; 
+    position: relative; 
+    right: 0;
+    bottom: -90px;  
+    cursor: pointer;
+} 
+
+
+}
+
+#cart {
+  background-color: #fdf1eb;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+#cart h3 {
+  color: #d35400;
+  margin-bottom: 20px;
+}
+
+#cart-items {
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.cart-item span {
+  color: #e74c3c;
+}
+
+.cart-item p {
+  margin: 0;
+}
+
+#total-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#order-confirmation {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e0f4ea;
+  border-radius: 5px;
+  font-size: 1.2em;
+  color: #2ecc71;
+}
+
+button#do {
+  width: 100%;
+  padding: 15px;
+  background-color: #d35400;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+button#do:hover {
+  background-color: #e67e22;
+}
+
+button#doings {
+  margin-top: 10px;
+  width: 100%;
+  padding: 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+button#doings:hover {
+  background-color: #2980b9;
+}
+
+
+
+</style>
+  <title>Frontend Mentor | Product list with cart</title>
+</head>
+<body>
+  <h1> Desserts</h1>
+ <div class="special"> 
+  <ul>
+<li><div class="card">
+  <picture>
+    <source
+      media="(max-width:800px)"
+      srcset="./assets/images/image-waffle-mobile.jpg"
+   id="pics" />
+  <img src="./assets/images/image-waffle-desktop.jpg" id="pic"/>
+  </picture>
+  <button id="pick"><img src="./assets/images/icon-add-to-cart.svg">Add to Cart</button> 
+  <p id="name">Waffle</p>
+  <p id="title">Waffle with Berries</p>
+  <p id="price">6.50</p>
+</div>
+
+<div class="card"> 
+  <picture>
+    <source
+      media="(max-width:800px)"
+      srcset="./assets/images/image-creme-brulee-mobile.jpg"
+    id="pics"/>
+  <img src="./assets/images/image-creme-brulee-desktop.jpg" id="pic"/>
+  </picture>
+  <button id="pick"><img src="./assets/images/icon-add-to-cart.svg">Add to Cart</button>
+  <p id="name">Crème Brûlée</p>
+  <p id="title">Vanilla Bean Crème Brûlée</p>
+  <p id="price">7.00</p>
+</div>
+<div class="card">
+  <picture>
+    <source
+      media="(max-width:800px)"
+      srcset="./assets/images/image-waffle-mobile.jpg"
+    id="pics"/>
+<img src="./assets/images/image-macaron-desktop.jpg" id="pic"/> 
+</picture>
+  <button id="pick"><img src="./assets/images/icon-add-to-cart.svg">Add to Cart</button>
+  <p id="name">Macaron</p>
+  <p id="title">Macaron Mix of Five</p> 
+  <p id="price">8.00</p> 
+</div> 
+</li> 
+<li>
+  <div class="card">
+    <picture>
+      <source
+        media="(max-width:800px)"
+        srcset="./assets/images/image-tiramisu-mobile.jpg"
+     id="pics" />
+<img src="./assets/images/image-tiramisu-desktop.jpg" id="pic"/>
+</picture>
+  <button id="pick"><img src="./assets/images/icon-add-to-cart.svg">Add to Cart</button>
+  <p id="name">Tiramisu</p>
+  <p id="title">Classic Tiramisu</p>
+  <p id="price">5.50</p>
+</div>
+<div class="card"> 
+  <picture>
+    <source
+      media="(max-width:800px)"
+      srcset="./assets/images/image-baklava-mobile.jpg"
+    id="pics"/>
+<img src="./assets/images/image-baklava-desktop.jpg" id="pic"/> 
+</picture> 
+  <button id="pick"><img src="./assets/images/icon-add-to-cart.svg">Add to Cart</button> 
+  <p id="name">Baklava</p>
+  <p id="title">Pistachio Baklava</p>
+  <p id="price">4.00</p> 
+</div>
+
+ <div class="card"> 
+  <picture>
+    <source
+      media="(max-width:800px)"
+      srcset="./assets/images/image-meringue-mobile.jpg"
+    id="pics"/>
+<img src="./assets/images/image-meringue-desktop.jpg" id="pic"/> 
+</picture> 
+  <button id="pick"><img src="./assets/images/icon-add-to-cart.svg">Add to Cart</button>
+  <p id="name">Pie</p>
+  <p id="title">Lemon Meringue Pie</p>
+  <p id="price">5.00</p>
+</div>
+</li>
+<li>
+<div class="card">  
+  <picture>
+    <source
+      media="(max-width:800px)"
+      srcset="./assets/images/image-cake-mobile.jpg"
+    id="pics"/> 
+<img src="./assets/images/image-cake-desktop.jpg" id="pic"/>
+</picture>
+  <button id="pick"><img src="./assets/images/icon-add-to-cart.svg">Add to Cart</button>
+  <p id="name">Cake</p>
+  <p id="title">Red Velvet Cake</p>
+  <p id="price">4.50</p>
+</div> 
+
+  <div class="card"> 
+    <picture>
+      <source
+        media="(max-width:800px)"
+        srcset="./assets/images/image-brownie-mobile.jpg"
+      id="pics"/>
+      <img src="./assets/images/image-brownie-desktop.jpg" id="pic"/>
+    </picture> 
+  <button id="pick"><img src="./assets/images/icon-add-to-cart.svg">Add to Cart</button>
+  <p id="name">Brownie</p>
+  <p id="title">Salted Caramel Brownie</p>
+  <p id="price">4.50</p> 
+</div>
+  
+<div class="card">
+    <picture>
+      <source
+        media="(max-width:800px)"
+        srcset="./assets/images/image-panna-cotta-mobile.jpg"
+      id="pics"/>
+      <img src="./assets/images/image-panna-cotta-desktop.jpg" id="pic"/>
+    </picture>  
+  <button id="pick"><img src="./assets/images/icon-add-to-cart.svg">Add to Cart</button>
+  <p id='name'>Panna Cotta</p>
+  <p id="title">Vanilla Panna Cotta</p>
+  <p id="price">6.50</p>
+</div> 
+</li>
+</ul>
+
+
+<!-- <div class="cart" id="cart"><h3>Your Cart (0)</h3> 
+ <img src="./assets/images/illustration-empty-cart.svg" id="cartpic">
+<p id="carttext">Your added items will appear here</p>
+<div id="full-total" class="order-total">
+  <span id="love">Total:</span>
+  <span id="total-amount">$0.00</span>
+</div>
+<aside id="do">complete order</aside>
+</div>  -->
+</div> 
+
+<div class="cart" id="cart">
+  <h3>Your Cart (0)</h3>
+  <div id="cart-items"></div>
+  <div id="carttext">Your added items will appear here</div>
+  <div id="cartpic"><img src="./assets/images/illustration-empty-cart.svg" id="cartpic"></div>
+  <div id="total-container" style="display: none;">
+    <p>Order Total <span id="total-amount">$0.00</span></p>
+  </div>
+  <div id="order-confirmation" style="display: none;">
+    <p>Your order is confirmed!</p>
+  </div>
+  <button id="do" style="display: none;">Confirm Order</button>
+  <button id="doings" style="display: none;">Start New Order</button>
+</div>
+
+
+<div id="order-confirmation" class="different">
+  <div class="order-content">
+      <div class="orderheader">
+          <img src="./assets/images/icon-order-confirmed.svg">
+          <h2>Order Confirmed</h2>
+          <p>We hope you enjoy your food!</p>  
+          <div>
+          <aside id="doings">start new order</aside>
+      </div> 
+</div>
+
+
+
+
+
+<!-- <div id="cart">
+  <h3>Your Cart (0)</h3>
+  <div id="cart-items"></div>
+  <div id="carttext">Your cart is empty.</div>
+  <div id="cartpic"><img src="empty_cart.png" alt="Empty Cart"></div>
+  <div id="total-container" style="display: none;">
+    <p>Order Total <span id="total-amount">$0.00</span></p>
+  </div>
+  <div id="order-confirmation" style="display: none;">
+    <p>Your order is confirmed!</p>
+  </div>
+  <button id="do" style="display: none;">Confirm Order</button>
+  <button id="doings" style="display: none;">Start New Order</button>
+</div> -->
+
+
+
+  <script>
+    
+document.addEventListener('DOMContentLoaded', () => {
+  const cart = document.getElementById('cart');
+  const cartCount = cart.querySelector('h3');
+  const cartItemsContainer = document.getElementById('cart-items');
+  const cartText = document.getElementById('carttext');
+  const cartImage = document.getElementById('cartpic');
+  const totalAmount = document.getElementById('total-amount');
+  const totalContainer = document.getElementById('total-container');
+  const orderButton = document.getElementById('do');
+  const orderConfirmation = document.getElementById('order-confirmation');
+  const startNewOrderButton = document.getElementById('doings');
+  let cartItems = [];
+
+  function updateCart() {
+    cartItemsContainer.innerHTML = '';
+    if (cartItems.length === 0) {
+      cartCount.innerText = 'Your Cart (0)';
+      cartText.style.display = 'block';
+      cartImage.style.display = 'block';
+      totalContainer.style.display = 'none';
+      orderButton.style.display = 'none';
+    } else {
+      cartCount.innerText = `Your Cart (${cartItems.reduce((sum, item) => sum + item.quantity, 0)})`;
+      cartText.style.display = 'none';
+      cartImage.style.display = 'none';
+      totalContainer.style.display = 'flex';
+      orderButton.style.display = 'block';
+
+      cartItems.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'cart-item';
+        itemElement.innerHTML = `
+          <p>${item.name}</p>
+          <span>${item.quantity}x @ $${item.price.toFixed(2)} $${(item.quantity * item.price).toFixed(2)}</span>
+          <button class="remove-item">×</button>
+        `;
+        cartItemsContainer.appendChild(itemElement);
+
+        itemElement.querySelector('.remove-item').addEventListener('click', () => {
+          cartItems = cartItems.filter(cartItem => cartItem !== item);
+          updateCart();
+        });
+      });
+
+      const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      totalAmount.innerText = `$${total.toFixed(2)}`;
+    }
+  }
+
+  function addToCart(item) {
+    const existingItem = cartItems.find(cartItem => cartItem.name === item.name);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cartItems.push({ ...item, quantity: 1 });
+    }
+    updateCart();
+  }
+
+  function completeOrder() {
+    orderConfirmation.style.display = 'block';
+    orderButton.style.display = 'none';
+  }
+
+  function startNewOrder() {
+    cartItems = [];
+    updateCart();
+    orderConfirmation.style.display = 'none';
+  }
+
+  // Add event listeners to "Add to Cart" buttons
+  document.querySelectorAll('#pick').forEach((button, index) => {
+    const itemName = button.parentElement.querySelector('#title').innerText;
+    const itemPrice = parseFloat(button.parentElement.querySelector('#price').innerText.replace('$', ''));
+    button.addEventListener('click', () => addToCart({ name: itemName, price: itemPrice }));
+  });
+
+  // Add event listener to "Complete Order" button
+  orderButton.addEventListener('click', completeOrder);
+
+  // Add event listener to "Start New Order" button
+  startNewOrderButton.addEventListener('click', startNewOrder);
+});
+
+
+
+  </script>
+</body>
+</html>

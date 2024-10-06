@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img src="product-list-with-cart-main/assets/images/icon-increment-quantity.svg" alt="">
+    <img src="product-list-with-cart-main/assets/images/icon-decrement-quantity.svg" alt=""> -->
+    <main class="container hmm">
+        <section class="left">
+            <h2 class="dess" style="font-weight: 700; margin-top: 3rem;">Desserts</h2>
+            <article class="food mt-4">
+                <div class="three d-flex mb-3">
+                    <div class="card me-3 each" style="width:200px; height: 275px; border: none;">
+                        <picture>
+                            <source media="(max-width: 800px)" srcset="product-list-with-cart-main/assets/images/image-waffle-mobile.jpg">
+                            <img class="card-img-top rounded-3" src="product-list-with-cart-main/assets/images/image-waffle-desktop.jpg" alt="Card image" style="width:90%;">
+                        </picture>
+                        <div class="card-body add">
+                            <a href="#" class="btn border border-secondary rounded-5">
+                                <img src="product-list-with-cart-main/assets/images/icon-add-to-cart.svg" alt="cart">
+                                Add to Cart
+                            </a>
+                            <p class="card-title" style="color: grey;">Waffle</p>
+                            <p class="card-text">Waffle with Berries<br><span>$6.50</span></p>
+                        </div>
+                    </div>
+                    <div class="card me-3 each" style="width:200px; height: 275px; border: none;">
+                        <picture>
+                            <source media="(max-width: 800px)" srcset="product-list-with-cart-main/assets/images/image-creme-brulee-mobile.jpg">
+                            <img class="card-img-top rounded-3" src="product-list-with-cart-main/assets/images/image-creme-brulee-desktop.jpg" alt="Card image" style="width:90%">
+                        </picture>
+                        <div class="card-body add">
+                            <a href="#" class="btn border border-secondary rounded-5">
+                                <img src="product-list-with-cart-main/assets/images/icon-add-to-cart.svg" alt="cart">
+                                Add to Cart
+                            </a>
+                            <p class="card-title" style="color: grey;">Crème Brûlée</p>
+                            <p class="card-text">Vanilla Bean Crème Brûlée<br><span>$7.00</span></p>
+                        </div>
+                    </div>
+                    <div class="card me-3 each" style="width:200px; height: 275px; border: none;">
+                        <picture>
+                            <source media="(max-width: 800px)" srcset="product-list-with-cart-main/assets/images/image-macaron-mobile.jpg">
+                            <img class="card-img-top rounded-3" src="product-list-with-cart-main/assets/images/image-macaron-desktop.jpg" alt="Card image" style="width:90%">
+                        </picture>
+                        <div class="card-body add">
+                            <a href="#" class="btn border border-secondary rounded-5">
+                                <img src="product-list-with-cart-main/assets/images/icon-add-to-cart.svg" alt="cart">
+                                Add to Cart
+                            </a>
+                            <p class="card-title" style="color: grey;">Macaron</p>
+                            <p class="card-text">Macaron Mix of Five<br><span>$8.00</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="three d-flex mb-3">
+                    <div class="card me-3 each" style="width:200px; height: 275px; border: none;" id="himm">
+                        <picture>
+                            <source media="(max-width: 800px)" srcset="product-list-with-cart-main/assets/images/image-tiramisu-mobile.jpg">
+                            <img class="card-img-top rounded-3" src="product-list-with-cart-main/assets/images/image-tiramisu-desktop.jpg" alt="Card image" style="width:90%" id="imm">
+                        </picture>
+                        <div class="card-body add">
+                            <a href="#" class="btn border border-secondary rounded-5">
+                                <img src="product-list-with-cart-main/assets/images/icon-add-to-cart.svg" alt="cart">
+                                Add to Cart
+                            </a>
+                            <p class="card-title" style="color: grey;">Tiramisu</p>
+                            <p class="card-text">Classic Tiramisu<br><span>$5.50</span></p>
+                        </div>
+                    </div>
+                    <div class="card me-3 each" style="width:200px; height: 275px; border: none;">
+                        <picture>
+                            <source media="(max-width: 800px)" srcset="product-list-with-cart-main/assets/images/image-baklava-mobile.jpg">
+                            <img class="card-img-top rounded-3" src="product-list-with-cart-main/assets/images/image-baklava-desktop.jpg" alt="Card image" style="width:90%">
+                        </picture>
+                        <div class="card-body add">
+                            <a href="#" class="btn border border-secondary rounded-5">
+                                <img src="product-list-with-cart-main/assets/images/icon-add-to-cart.svg" alt="cart">
+                                Add to Cart
+                            </a>
+                            <p class="card-title" style="color: grey;">Baklava</p>
+                            <p class="card-text">Pistachio Baklava<br><span>$4.00</span></p>
+                        </div>
+                    </div>
+                    <div class="card me-3 each" style="width:200px; height: 275px; border: none;">
+                        <picture>
+                            <source media="(max-width: 800px)" srcset="product-list-with-cart-main/assets/images/image-meringue-mobile.jpg">
+                            <img class="card-img-top rounded-3" src="product-list-with-cart-main/assets/images/image-meringue-desktop.jpg" alt="Card image" style="width:90%">
+                        </picture>
+                        <div class="card-body add">
+                            <a href="#" class="btn border border-secondary rounded-5">
+                                <img src="product-list-with-cart-main/assets/images/icon-add-to-cart.svg" alt="cart">
+                                Add to Cart
+                            </a>
+                            <p class="card-title" style="color: grey;">Pie</p>
+                            <p class="card-text">Lemon Meringue Pie<br><span>$5.00</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="three d-flex mb-3">
+                    <div class="card me-3 each" style="width:200px; height: 275px; border: none;">
+                        <picture>
+                            <source media="(max-width: 800px)" srcset="product-list-with-cart-main/assets/images/image-cake-mobile.jpg">
+                            <img class="card-img-top rounded-3" src="product-list-with-cart-main/assets/images/image-cake-desktop.jpg" alt="Card image" style="width:90%">
+                        </picture>
+                        <div class="card-body add">
+                            <a href="#" class="btn border border-secondary rounded-5">
+                                <img src="product-list-with-cart-main/assets/images/icon-add-to-cart.svg" alt="cart">
+                                Add to Cart
+                            </a>
+                            <p class="card-title" style="color: grey;">Cake</p>
+                            <p class="card-text">Red Velvet Cake<br><span>$4.50</span></p>
+                        </div>
+                    </div>
+                    <div class="card me-3 each" style="width:200px; height: 275px; border: none;">
+                        <picture>
+                            <source media="(max-width: 800px)" srcset="product-list-with-cart-main/assets/images/image-brownie-mobile.jpg">
+                            <img class="card-img-top rounded-3" src="product-list-with-cart-main/assets/images/image-brownie-desktop.jpg" alt="Card image" style="width:90%">
+                        </picture>
+                        <div class="card-body add">
+                            <a href="#" class="btn border border-secondary rounded-5">
+                                <img src="product-list-with-cart-main/assets/images/icon-add-to-cart.svg" alt="cart">
+                                Add to Cart
+                            </a>
+                            <p class="card-title" style="color: grey;">Baklava</p>
+                            <p class="card-text">Pistachio Baklava<br><span>$4.00</span></p>
+                        </div>
+                    </div>
+                    <div class="card me-3 each" style="width:200px; height: 275px; border: none;">
+                        <picture>
+                            <source media="(max-width: 800px)" srcset="product-list-with-cart-main/assets/images/image-panna-cotta-mobile.jpg">
+                            <img class="card-img-top rounded-3" src="product-list-with-cart-main/assets/images/image-panna-cotta-desktop.jpg" alt="Card image" style="width:90%">
+                        </picture>
+                        <div class="card-body add">
+                            <a href="#" class="myy btn border border-secondary rounded-5">
+                                <img src="product-list-with-cart-main/assets/images/icon-add-to-cart.svg" alt="cart">
+                                Add to Cart
+                            </a>
+                            <p class="card-title" style="color: grey;">Panna Cotta</p>
+                            <p class="card-text">Vanilla Panna Cotta<br><span>$6.50</span></p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="right">
+            <div class="box">
+                <h4>Your Cart (0)</h4>
+                <img class="boximg" src="product-list-with-cart-main/assets/images/illustration-empty-cart.svg" alt="">
+                <p>Your added items will appear here</p>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- <div class="quantity-control">
+        <button class="quantity-btn decrease" type="button">-</button>
+        <span class="quantity-value">1</span>
+        <button class="quantity-btn increase" type="button">+</button>
+    </div> -->
+
+
+    <div id="order-confirmation-modal" class="modal">
+        <div class="modal-content">
+            <div class="modalheader">
+                <img src="product-list-with-cart-main/assets/images/icon-order-confirmed.svg" alt="">
+                <h2>Order Confirmed</h2>
+                <p>We hope you enjoy your food!</p>
+            </div>
+            
+            <div class="order-summary ordsum">
+                <!-- Cart items will be injected here by JavaScript -->
+            </div>
+            <div class="order-total ordtol">
+                <span id="modall">Order Total</span>
+                <span id="modal-total">$0.00</span>
+            </div>
+            <button class="start-new-order">Start New Order</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
